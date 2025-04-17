@@ -37,9 +37,9 @@ spring:
         name: admin
         password: admin123
 
-  server:
-    port: 9097
-    shutdown: graceful
+server:
+   port: 9097
+   shutdown: graceful
 
 logging:
   level:

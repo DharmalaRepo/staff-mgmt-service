@@ -3,6 +3,7 @@ package com.tech.society.staff.controllers;
 import com.tech.society.staff.models.SocietyStaffMaster;
 import com.tech.society.staff.services.SocietyStaffMasterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +14,12 @@ public class SocietyStaffMasterController {
 
     @Autowired
     private SocietyStaffMasterService staffService;
+
+
+    @GetMapping("/health")
+    public ResponseEntity<?> health() {
+        return ResponseEntity.ok("Hello, welcome to Society Staff Service..!!");
+    }
 
     @PostMapping("/register")
     public SocietyStaffMaster registerStaff(@RequestBody SocietyStaffMaster staff) {
