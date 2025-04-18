@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staff-mgmt-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: staff-mgmt-service
+  template:
+    metadata:
+      labels:
+        app: staff-mgmt-service
+    spec:
+      containers:
+        - name: staff-mgmt-service
+          image: dharmala/staff-mgmt-service:250417
+          ports:
+            - containerPort: 9097
